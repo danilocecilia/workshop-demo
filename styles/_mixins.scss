@@ -1,0 +1,24 @@
+@mixin margin-x($x) {
+  margin-left: $x;
+  margin-right: $x;
+}
+
+@mixin margin-y($x) {
+  margin-top: $x;
+  margin-bottom: $x;
+}
+
+@mixin padding-x($x) {
+  padding-left: $x;
+  padding-right: $x;
+}
+
+@mixin padding-y($x) {
+  padding-top: $x;
+  padding-bottom: $x;
+}
+
+@mixin fontawesome() {
+  font-family: $font-awesome;
+  font-weight: $font-weight-awesome;
+}
