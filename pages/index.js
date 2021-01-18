@@ -65,10 +65,12 @@ const Home = () => {
             <h2>Active Games</h2>
 
             <div className="search-box">
-              <input className="input-search" placeholder="Search"></input>
-              <button>
-                <i className="fas fa-search"></i>
-              </button>
+              <div className="wrapper">
+                <input className="input-search" placeholder="Search"></input>
+                <button>
+                  <i className="fas fa-search"></i>
+                </button>
+              </div>
             </div>
 
             <div className="search-result">

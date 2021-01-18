@@ -1,0 +1,23 @@
+// Viewport
+$screen-min-xxs: 375px;
+$screen-min-xs: 480px;
+$screen-min-sm: 768px;
+$screen-min-md: 992px;
+$screen-min-lg: 1280px;
+$screen-min-xxl: 1680px;
+
+$screen-max-xxs: $screen-min-xs - 1;
+$screen-max-xs: $screen-min-sm - 1;
+$screen-max-sm: $screen-min-md - 1;
+$screen-max-md: $screen-min-lg - 1;
+$screen-max-lg: $screen-min-xxl - 1;
+
+// // Color
+$color-lv1: #dafaff;
+$color-lv2: #1777ff;
+$color-lv3: #33517c;
+$color-lv4: #659ff1;
+$color-lv5: #64e3c3;
+$color-lv6: #9563ff;
+$color-lv7: #72e0c5;
+$color-white: #fff;
