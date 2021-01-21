@@ -34,7 +34,7 @@ const ActiveGames = () => {
                 <div className="progress-bar">
                   <div
                     className="percentage"
-                    style={{ width: w.percentage + '%' }}></div>
+                    style={{ width: `${w.percentage}%` }}></div>
                 </div>
               </div>
 

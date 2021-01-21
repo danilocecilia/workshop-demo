@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import '../styles/styles.scss'
 
-import Sidebar from './sidebar'
-import ActiveGames from './activeGames'
+import Sidebar from '../components/sidebar'
+import ActiveGames from '../components/activeGames'
 
 const Home = () => {
   return (
