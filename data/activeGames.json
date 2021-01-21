@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Assassins Creed Valhalla",
+    "platform": "PS5 Version",
+    "thumbnail": "/assassins.jpg",
+    "percentage": 60
+  },
+  {
+    "id": 2,
+    "name": "Spider Man - Miles Morales",
+    "platform": "PS5 Version",
+    "thumbnail": "/spider.jpg",
+    "percentage": 50
+  },
+  {
+    "id": 3,
+    "name": "Sackboy - A Big Adventure",
+    "platform": "PS5 Version",
+    "thumbnail": "/sackboy.jpg",
+    "percentage": 10
+  }
+]

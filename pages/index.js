@@ -2,6 +2,8 @@ import Head from 'next/head'
 // import styles from '../styles/Home.module.css'
 import '../styles/styles.scss'
 
+let data = require('../data/activeGames.json')
+
 import Image from 'next/image'
 
 const Home = () => {
@@ -74,50 +76,32 @@ const Home = () => {
             </div>
 
             <div className="search-result">
-              <div className="game">
-                <div className="img-container">
-                  <Image layout="fill" src="/assassins.jpg" className="img" />
-                </div>
+              {data.map((w) => {
+                return (
+                  <div className="game" key={w.id}>
+                    <div className="img-container">
+                      <Image
+                        layout="fill"
+                        loader={() => w.thumbnail}
+                        src="me.png"
+                        className="img"
+                      />
+                    </div>
 
-                <div className="game-activity">
-                  <h3>Assassins Creed Valhalla</h3>
-                  <p>PS5 Version</p>
-                  <div className="progress-bar">
-                    <div className="percentage"></div>
+                    <div className="game-activity">
+                      <h3>{w.name}</h3>
+                      <p>{w.platform}</p>
+                      <div className="progress-bar">
+                        <div
+                          className="percentage"
+                          style={{ width: w.percentage + '%' }}></div>
+                      </div>
+                    </div>
+
+                    <p className="percentage">{w.percentage}%</p>
                   </div>
-                </div>
-                <p className="percentage">60%</p>
-              </div>
-
-              <div className="game">
-                <div className="img-container">
-                  <Image layout="fill" src="/spider.jpg" className="img" />
-                </div>
-
-                <div className="game-activity">
-                  <h3>Spider Man - Miles Morales</h3>
-                  <p>PS5 Version</p>
-                  <div className="progress-bar">
-                    <div className="percentage"></div>
-                  </div>
-                </div>
-                <p className="percentage">60%</p>
-              </div>
-
-              <div className="game">
-                <div className="img-container">
-                  <Image layout="fill" src="/sackboy.jpg" className="img" />
-                </div>
-
-                <div className="game-activity">
-                  <h3>Sackboy - A Big Adventure</h3>
-                  <p>PS5 Version</p>
-                  <div className="progress-bar">
-                    <div className="percentage"></div>
-                  </div>
-                </div>
-                <p className="percentage">60%</p>
-              </div>
+                )
+              })}
             </div>
           </div>
         </div>
