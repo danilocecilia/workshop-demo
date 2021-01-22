@@ -90,6 +90,7 @@ body {
           display: flex;
           align-items: center;
           margin-bottom: 2rem;
+          cursor: pointer;
 
           i {
             text-align: center;
@@ -117,7 +118,6 @@ body {
           }
 
           a {
-            cursor: pointer;
             font-size: 14px;
             font-weight: 700;
             background: linear-gradient($color-lv4, $color-lv4);
@@ -157,14 +157,13 @@ body {
         align-items: center;
         background: linear-gradient(to right, $color-lv5 30%, $color-lv6 100%);
         @include padding-x(2rem);
-        margin-top: 3rem;
+        height: 150px;
 
-        div:nth-of-type(1) {
+        img {
           transform: rotate(-20deg);
           flex-basis: 50%;
-          img {
-            object-fit: contain;
-          }
+          object-fit: contain;
+          max-width: 50%;
         }
 
         p {
