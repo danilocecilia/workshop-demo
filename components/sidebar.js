@@ -1,11 +1,9 @@
-import Image from 'next/image'
-
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="content">
         <div className="profile">
-          <Image src="/avatar.png" alt="me" width="70" height="70" />
+          <img src="/avatar.png" alt="me" width="70" height="70" />
           <p>Danilo Cecilia</p>
           <p>Pro Member</p>
         </div>
@@ -30,7 +28,7 @@ const Sidebar = () => {
 
         <div className="join-now">
           <p>Join pro for free games.</p>
-          <Image
+          <img
             className="gamepad"
             src="/gamepad.png"
             alt="gamepad"

@@ -1,5 +1,4 @@
 let data = require('../data/activeGames.json')
-import Image from 'next/image'
 
 const ActiveGames = () => {
   return (
@@ -20,12 +19,7 @@ const ActiveGames = () => {
           return (
             <div className="game" key={w.id}>
               <div className="img-container">
-                <Image
-                  layout="fill"
-                  loader={() => w.thumbnail}
-                  src="me.png"
-                  className="img"
-                />
+                <img src={w.thumbnail} className="img" />
               </div>
 
               <div className="game-activity">
