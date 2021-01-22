@@ -31,7 +31,7 @@ jobs:
         run: STAGE=dev npm run build
 
       - name: copy files to s3
-        run: aws s3 sync ./web/build s3://workshops.danilocecilia.com
+        run: aws s3 sync "/*" s3://workshops.danilocecilia.com
 
       - name: Invalidate cache
         run: |
