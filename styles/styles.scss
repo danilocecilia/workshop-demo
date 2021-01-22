@@ -242,6 +242,7 @@ body {
             }
 
             @media screen and (max-width: $screen-max-xs) {
+              max-width: unset;
               width: 100%;
             }
           }
