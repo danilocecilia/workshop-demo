@@ -1,6 +1,7 @@
 const Sidebar = () => {
   return (
     <div className="sidebar">
+      <div className="circle"></div>
       <div className="content">
         <div className="profile">
           <img src="/avatar.png" alt="me" width="70" height="70" />
