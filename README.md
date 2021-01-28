@@ -3,8 +3,10 @@ The intention of this project was to brush up my CSS skills and to learn about N
 The idea behind this was based on a tweet from a youtuber @Deved about a new design idea for his youtube channel tutorial, so I thought would be nice to create the HTML version of that myself.
 <br/><br/>
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I did that weird glass design thing? Should I film a mini tutorial? <a href="https://t.co/Psd6FkHryF">pic.twitter.com/Psd6FkHryF</a></p>&mdash; Dev Ed (@developedbyed) <a href="https://twitter.com/developedbyed/status/1347274275309416450?ref_src=twsrc%5Etfw">January 7, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I did that weird glass design thing? Should I film a mini tutorial? <a href="https://t.co/Psd6FkHryF">pic.twitter.com/Psd6FkHryF</a></p>&mdash; Dev Ed (@developedbyed) <a href="https://twitter.com/developedbyed/status/1347274275309416450?ref_src=twsrc%5Etfw">January 7, 2021</a></blockquote>
 
+<br/>
+<br/>
 I've decided to create an github action for deploying it automatically on S3 bucket, you can see it live here: https://workshop.danilocecilia.com/
 
 <br/>
