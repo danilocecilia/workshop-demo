@@ -26,6 +26,7 @@ body {
   .sidebar {
     display: flex;
     max-width: 310px;
+    width: 100%;
     border-radius: 30px 0 0 30px;
     background-color: $color-lv1;
 
@@ -64,10 +65,13 @@ body {
       align-items: center;
       margin: 30px;
       width: 250px;
+      height: 100%;
+      max-height: 700px;
+      min-height: 700px;
 
       @media screen and (max-width: $screen-max-md) {
         width: 100%;
-        align-items: center;
+        min-height: auto;
       }
 
       .profile {
@@ -99,10 +103,19 @@ body {
         display: flex;
         flex-direction: column;
 
-        @media screen and (min-width: $screen-max-xs) and (max-width: $screen-max-md) {
+        @media screen and (max-width: $screen-max-md) {
           flex-direction: row;
           justify-content: space-around;
           width: 400px;
+        }
+
+        @media screen and (max-width: $screen-max-xs) {
+          width: 100%;
+          max-width: 90%;
+
+          li {
+            min-height: 3rem;
+          }
         }
 
         li {
@@ -158,16 +171,6 @@ body {
             justify-content: space-around;
           }
         }
-
-        @media screen and (max-width: $screen-max-xxs) {
-          flex-direction: row;
-          justify-content: space-around;
-          width: 200px;
-
-          li {
-            min-height: 3rem;
-          }
-        }
       }
 
       .join-now {
@@ -202,6 +205,7 @@ body {
   .container {
     display: flex;
     max-width: 850px;
+    width: 100%;
     border-radius: 0 30px 30px 0;
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(4px);
@@ -242,6 +246,10 @@ body {
       @include margin-x(5rem);
       @include margin-y(3rem);
 
+      @media screen and (max-width: $screen-max-md) {
+        align-items: center;
+      }
+
       @media screen and (max-width: $screen-max-xs) {
         @include margin-x(1rem);
 
@@ -257,25 +265,69 @@ body {
       }
 
       .search-box {
+        max-width: 60%;
         @include margin-y(2rem);
 
-        .wrapper {
+        @media screen and (max-width: $screen-max-md) {
           display: flex;
-          width: fit-content;
-          position: relative;
+          align-self: center;
+          max-width: 560px;
+          width: 100%;
+        }
 
-          @media screen and (max-width: $screen-max-xs) {
-            width: 100%;
+        .react-autosuggest__container,
+        .react-autosuggest__container--open {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          position: relative;
+          width: 100%;
+          z-index: 1;
+
+          @media screen and (max-width: $screen-max-md) {
+            align-items: unset;
           }
 
-          .input-search {
+          .react-autosuggest__suggestions-container,
+          .react-autosuggest__suggestions-container--open {
+            display: flex;
+            border-radius: 2px;
+            position: absolute;
+            top: 50px;
+            bottom: 0;
+            z-index: 1;
+            margin-top: 0.5em;
+
+            .react-autosuggest__suggestion,
+            .react-autosuggest__suggestion--first {
+              border: 1px solid #d9d9d9;
+              cursor: pointer;
+              padding: 10px 20px;
+              height: auto;
+              border-top: 0;
+              background: #dafaff;
+
+              &:hover {
+                background: #b8dcf5;
+              }
+
+              @media screen and (max-width: $screen-max-xs) {
+                height: auto;
+                font-size: 10px;
+                min-height: 35px;
+              }
+            }
+          }
+
+          .react-autosuggest__input {
             border-radius: 30px;
-            @include padding-x(1.5rem);
+            padding-left: 1.5rem;
+            padding-right: 2.5rem;
             @include padding-y(0.75rem);
             opacity: 0.6;
             color: #003a88;
             border: 3px solid #dfdfdf;
-            max-width: 300px;
+            width: 100%;
 
             &:focus {
               outline: none;
@@ -287,17 +339,25 @@ body {
             }
           }
 
-          button {
-            position: absolute;
-            right: 1rem;
-            bottom: 0;
-            top: 0;
-            opacity: 0.3;
+          .inputContainer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
 
-            @media screen and (max-width: $screen-max-xs) {
-              right: 2rem;
+            i {
+              position: absolute;
+              right: 1rem;
+              opacity: 0.3;
+              @media screen and (max-width: $screen-max-xs) {
+                right: 2rem;
+              }
             }
           }
+        }
+
+        @media screen and (max-width: $screen-max-xs) {
+          width: 100%;
         }
       }
 
@@ -305,6 +365,7 @@ body {
         display: flex;
         flex-direction: column;
         max-width: 600px;
+        width: 100%;
 
         @media screen and (max-width: $screen-max-md) {
           max-width: 100%;
@@ -315,8 +376,11 @@ body {
           display: flex;
           background: $color-lv1;
           border-radius: 30px;
-          max-width: 610px;
+          max-width: 560px;
+          width: 100%;
           box-shadow: 2px 6px 10px #9a9a9a5c;
+          justify-content: space-around;
+          cursor: pointer;
 
           @media screen and (max-width: $screen-max-md) {
             align-items: center;
@@ -344,24 +408,9 @@ body {
           .game-activity {
             display: flex;
             flex-direction: column;
-            @include margin-x(3rem);
+            margin-right: 3rem;
             justify-content: space-between;
-
-            @media screen and (max-width: $screen-max-md) {
-              @include margin-y(1rem);
-            }
-
-            @media screen and (max-width: $screen-max-xs) {
-              @include margin-x(1rem);
-
-              h3 {
-                font-size: 23px;
-              }
-
-              p {
-                font-size: 15px;
-              }
-            }
+            @include padding-x(1rem);
 
             h3 {
               color: #545454;
@@ -370,6 +419,24 @@ body {
 
             p {
               color: #afafaf;
+            }
+
+            @media screen and (max-width: $screen-max-md) {
+              @include margin-y(1rem);
+              min-height: 70px;
+            }
+
+            @media screen and (max-width: $screen-max-xs) {
+              text-align: center;
+              @include margin-x(1rem);
+              min-height: 80px;
+              h3 {
+                font-size: 18px;
+              }
+
+              p {
+                font-size: 12px;
+              }
             }
 
             .progress-bar {

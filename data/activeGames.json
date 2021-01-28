@@ -19,5 +19,12 @@
     "platform": "PS5 Version",
     "thumbnail": "/sackboy.jpg",
     "percentage": 10
+  },
+  {
+    "id": 4,
+    "name": "Sackboy - A Big Adventure",
+    "platform": "XBOX One S Version",
+    "thumbnail": "/sackboy.jpg",
+    "percentage": 10
   }
 ]

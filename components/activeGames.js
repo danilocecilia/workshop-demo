@@ -1,6 +1,66 @@
+import React from 'react'
 let data = require('../data/activeGames.json')
+import Search from './searchButton'
 
 const ActiveGames = () => {
+  const [value, setValue] = React.useState('')
+  const [method, setMethod] = React.useState('type')
+
+  const handleOnChange = (event, { newValue, method }) => {
+    setValue(newValue)
+    setMethod(method)
+  }
+
+  const handleSuggestionValue = (suggestion) => {
+    setSuggestionValue(suggestion)
+    return `${suggestion.name} | ${suggestion.platform}`
+  }
+
+  const GameItems = ({ game }) => {
+    return (
+      <div className="game" key={game.id}>
+        <div className="img-container">
+          <img src={game.thumbnail} className="img" />
+        </div>
+
+        <div className="game-activity">
+          <h3>{game.name}</h3>
+          <p>{game.platform}</p>
+          <div className="progress-bar">
+            <div
+              className="percentage"
+              style={{ width: `${game.percentage}%` }}></div>
+          </div>
+        </div>
+
+        <p className="percentage">{game.percentage}%</p>
+      </div>
+    )
+  }
+
+  const renderActiveGames = () => {
+    if (value && method !== 'type') {
+      const splittedValue = value.split('|')
+
+      const gameName = splittedValue[0]
+      const platform = splittedValue[1]
+
+      return data
+        .filter(
+          (game) =>
+            gameName.trim().toLocaleLowerCase() ===
+              game.name.trim().toLocaleLowerCase() &&
+            platform.trim().toLocaleLowerCase() ===
+              game.platform.trim().toLocaleLowerCase()
+        )
+        .map((w) => {
+          return <GameItems game={w} />
+        })
+    } else {
+      return data.map((game) => <GameItems game={game} />)
+    }
+  }
+
   return (
     <>
       <div className="circle"></div>
@@ -8,37 +68,14 @@ const ActiveGames = () => {
         <h2>Active Games</h2>
 
         <div className="search-box">
-          <div className="wrapper">
-            <input className="input-search" placeholder="Search"></input>
-            <button>
-              <i className="fas fa-search"></i>
-            </button>
-          </div>
+          <Search
+            data={data}
+            handleOnChange={handleOnChange}
+            searchedValue={value}
+          />
         </div>
 
-        <div className="search-result">
-          {data.map((w) => {
-            return (
-              <div className="game" key={w.id}>
-                <div className="img-container">
-                  <img src={w.thumbnail} className="img" />
-                </div>
-
-                <div className="game-activity">
-                  <h3>{w.name}</h3>
-                  <p>{w.platform}</p>
-                  <div className="progress-bar">
-                    <div
-                      className="percentage"
-                      style={{ width: `${w.percentage}%` }}></div>
-                  </div>
-                </div>
-
-                <p className="percentage">{w.percentage}%</p>
-              </div>
-            )
-          })}
-        </div>
+        <div className="search-result">{renderActiveGames()}</div>
       </div>
     </>
   )
