@@ -53,8 +53,8 @@ const ActiveGames = () => {
             platform.trim().toLocaleLowerCase() ===
               game.platform.trim().toLocaleLowerCase()
         )
-        .map((w) => {
-          return <GameItems game={w} />
+        .map((w, index) => {
+          return <GameItems key={index} game={w} />
         })
     } else {
       return data.map((game) => <GameItems game={game} />)
